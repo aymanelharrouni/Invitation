@@ -1,0 +1,699 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Invitation de mariage — Rihab & Anis</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --beige: rgb(254, 250, 224);
+  --ink:#1b1a18;
+  --muted: rgba(27,26,24,.62);
+  --card: rgba(255,255,255,.80);
+  --shadow: 0 18px 45px rgba(0,0,0,.16);
+  --shadow2: 0 46px 110px rgba(0,0,0,.24);
+  --radius: 26px;
+
+  /* En-tête vert militaire foncé EXACT */
+  --military: rgb(58, 74, 38);
+  --military2: rgb(46, 60, 30);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(1100px 650px at 20% 10%, rgba(58,74,38,.14), transparent 55%),
+    radial-gradient(900px 520px at 85% 30%, rgba(58,74,38,.10), transparent 60%),
+    linear-gradient(180deg,#f7f2d7,var(--beige));
+  padding: 28px 12px 56px;
+  overflow-x:hidden;
+}
+
+.page{
+  width:min(980px,100%);
+  margin:0 auto;
+  border-radius: var(--radius);
+  overflow:hidden;
+  background: var(--beige);
+  box-shadow: var(--shadow2);
+  border: 1px solid rgba(0,0,0,.06);
+}
+
+/* =========================
+   EN-TÊTE
+   ========================= */
+header{
+  position:relative;
+  background:
+    radial-gradient(900px 460px at 50% -10%, rgba(255,255,255,.08), transparent 60%),
+    linear-gradient(180deg, var(--military), var(--military2));
+  color:#fff;
+  overflow:hidden;
+}
+
+.hero{
+  text-align:center;
+  padding:42px 18px 30px;
+}
+
+.kicker{
+  font-family:"Playfair Display",serif;
+  letter-spacing:.34em;
+  text-transform:uppercase;
+  font-size:12px;
+  opacity:.95;
+}
+
+.names{
+  margin:14px 0 8px;
+  line-height:1.02;
+}
+
+.names .a,.names .b{
+  font-family:"Great Vibes",cursive;
+  font-size:clamp(58px,6vw,96px);
+  color:#fff;
+  text-shadow:0 14px 34px rgba(0,0,0,.35);
+}
+
+.amp{
+  font-family:"Playfair Display",serif;
+  font-style:italic;
+  font-size:18px;
+  margin:10px 0;
+}
+
+.meta{
+  margin-top:10px;
+  font-family:"Playfair Display",serif;
+  font-size:14px;
+  opacity:.96;
+}
+
+.divider{
+  height:1px;
+  width:min(560px,86%);
+  margin:18px auto 0;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.8),transparent);
+  opacity:.7;
+}
+
+/* =========================
+   SECTIONS
+   ========================= */
+section{ padding: 28px 18px; }
+
+.title{
+  font-family:"Great Vibes",cursive;
+  font-size:46px;
+  margin:0;
+  text-align:center;
+  color:#2a2a26;
+}
+
+.sub{
+  text-align:center;
+  font-family:"Playfair Display",serif;
+  font-style:italic;
+  color: var(--muted);
+  margin:8px 0 18px;
+}
+
+/* Compte à rebours */
+.tiles{
+  margin:18px auto 0;
+  max-width:760px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
+@media(max-width:720px){
+  .tiles{grid-template-columns:repeat(2,1fr)}
+}
+.tile{
+  background: rgba(255,255,255,.88);
+  border-radius:18px;
+  padding:16px;
+  text-align:center;
+  box-shadow:0 14px 34px rgba(0,0,0,.10);
+  border: 1px solid rgba(0,0,0,.06);
+}
+.tile .num{
+  font-family:"Playfair Display",serif;
+  font-size:34px;
+  font-weight:600;
+}
+.tile .lbl{
+  margin-top:6px;
+  font-size:11px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:rgba(0,0,0,.6);
+}
+
+/* Cartes (Détails + Programme) */
+.grid{
+  margin: 18px auto 0;
+  max-width: 900px;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;
+}
+@media(max-width:860px){
+  .grid{ grid-template-columns:1fr; }
+}
+.card{
+  background: var(--card);
+  border-radius: var(--radius);
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: var(--shadow);
+  overflow:hidden;
+}
+.pad{ padding: 18px 18px 16px; }
+.card h3{
+  margin:0;
+  text-align:center;
+  font-family:"Playfair Display",serif;
+  font-weight:600;
+}
+
+.details{
+  margin-top:14px;
+  display:grid;
+  gap:10px;
+  font-size:14px;
+  color: rgba(27,26,24,.86);
+}
+.row{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  padding:10px 12px;
+  border-radius:16px;
+  background: rgba(254,250,224,.92);
+  border: 1px solid rgba(0,0,0,.06);
+}
+.ico{
+  width:30px; height:30px;
+  border-radius:12px;
+  display:grid;
+  place-items:center;
+  background: rgba(58,74,38,.12);
+  border: 1px solid rgba(58,74,38,.18);
+  flex:0 0 auto;
+}
+
+/* “Carte” décorative */
+.map{
+  height:200px;
+  background:
+    radial-gradient(800px 250px at 70% 30%, rgba(58,74,38,.18), transparent 55%),
+    linear-gradient(180deg, rgba(58,74,38,.10), rgba(254,250,224,.98)),
+    repeating-linear-gradient(90deg, rgba(0,0,0,.06) 0 1px, transparent 1px 26px),
+    repeating-linear-gradient(0deg, rgba(0,0,0,.04) 0 1px, transparent 1px 22px);
+  position:relative;
+  border-top: 1px solid rgba(0,0,0,.07);
+  border-bottom: 1px solid rgba(0,0,0,.07);
+}
+.pin{
+  position:absolute;
+  left:46%;
+  top:48%;
+  transform:translate(-50%,-60%);
+  width:14px; height:14px;
+  border-radius:999px;
+  background: var(--military);
+  box-shadow:0 10px 18px rgba(0,0,0,.22);
+}
+.pin::after{
+  content:"";
+  position:absolute;
+  left:50%; top:100%;
+  transform:translateX(-50%);
+  width:0; height:0;
+  border-left:7px solid transparent;
+  border-right:7px solid transparent;
+  border-top:10px solid var(--military);
+}
+.map-label{
+  position:absolute;
+  left:18px; bottom:14px;
+  background: rgba(255,255,255,.82);
+  border:1px solid rgba(58,74,38,.18);
+  border-radius:999px;
+  padding:8px 12px;
+  font-size:12px;
+  box-shadow:0 12px 25px rgba(0,0,0,.10);
+}
+
+.btn{
+  display:inline-flex;
+  gap:10px;
+  align-items:center;
+  justify-content:center;
+  padding:12px 16px;
+  border-radius:999px;
+  border:1px solid rgba(58,74,38,.30);
+  background: rgba(255,255,255,.86);
+  color: var(--ink);
+  text-decoration:none;
+  font-weight:500;
+  box-shadow:0 10px 25px rgba(0,0,0,.10);
+  transition: transform .15s ease, background .15s ease;
+}
+.btn:hover{ background: rgba(255,255,255,.96); }
+.btn:active{ transform: scale(.98); }
+
+/* Timeline */
+.timeline{ display:grid; gap:10px; padding: 6px 2px 6px; }
+.item{
+  display:grid;
+  grid-template-columns:84px 1fr;
+  gap:12px;
+  align-items:center;
+  padding:12px 12px;
+  border-radius:18px;
+  background: rgba(254,250,224,.92);
+  border: 1px solid rgba(0,0,0,.06);
+}
+.time{
+  font-family:"Playfair Display",serif;
+  font-weight:600;
+  font-size:13px;
+  background: rgba(58,74,38,.12);
+  border: 1px solid rgba(58,74,38,.18);
+  border-radius:14px;
+  padding:10px 10px;
+  text-align:center;
+}
+.desc .t{
+  margin:0;
+  font-family:"Playfair Display",serif;
+  font-weight:600;
+  font-size:15px;
+}
+.desc .s{
+  margin:2px 0 0;
+  color: rgba(27,26,24,.62);
+  font-size:12px;
+}
+
+footer{
+  padding:20px;
+  text-align:center;
+  font-size:12px;
+  color:rgba(0,0,0,.5);
+}
+
+/* =========================
+   INTRO / ENVELOPPE
+   ========================= */
+.intro{
+  position:fixed;
+  inset:0;
+  display:grid;
+  place-items:center;
+  z-index:9999;
+  background:
+    radial-gradient(1100px 650px at 20% 10%, rgba(58,74,38,.16), transparent 55%),
+    radial-gradient(900px 520px at 85% 30%, rgba(58,74,38,.10), transparent 60%),
+    linear-gradient(180deg,#f7f2d7,var(--beige));
+  transition: opacity .85s ease, transform .85s cubic-bezier(.2,.9,.2,1);
+  padding: 22px 12px;
+}
+
+.intro-inner{
+  width:min(560px,92vw);
+  text-align:center;
+  animation: floaty 4.2s ease-in-out infinite;
+}
+@keyframes floaty{
+  0%,100%{ transform: translateY(0); }
+  50%{ transform: translateY(-10px); }
+}
+
+.intro-title{
+  font-family:"Great Vibes",cursive;
+  font-size:56px;
+  margin:0 0 6px;
+  color: rgba(27,26,24,.88);
+}
+.intro-sub{
+  font-family:"Playfair Display",serif;
+  font-style:italic;
+  margin:0 0 18px;
+  color: rgba(27,26,24,.62);
+  font-size:14px;
+}
+
+.envelope{
+  position:relative;
+  width:100%;
+  max-width:520px;
+  margin:0 auto;
+  aspect-ratio: 4 / 3;
+  border-radius:28px;
+  cursor:pointer;
+  user-select:none;
+  overflow:hidden;
+  box-shadow: 0 28px 78px rgba(0,0,0,.22);
+  border:1px solid rgba(0,0,0,.10);
+  background:
+    radial-gradient(1200px 700px at 30% 10%, rgba(255,255,255,.60), transparent 52%),
+    radial-gradient(700px 520px at 70% 90%, rgba(0,0,0,.08), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.65), rgba(0,0,0,.05)),
+    repeating-linear-gradient(0deg, rgba(0,0,0,.020) 0 1px, transparent 1px 7px),
+    repeating-linear-gradient(90deg, rgba(0,0,0,.012) 0 1px, transparent 1px 11px);
+}
+.envelope::after{
+  content:"";
+  position:absolute; inset:-40px;
+  background: radial-gradient(520px 220px at 30% 20%, rgba(255,255,255,.22), transparent 65%);
+  transform: rotate(-6deg);
+  pointer-events:none;
+}
+
+.letter{
+  position:absolute;
+  left: 8%;
+  right: 8%;
+  bottom: 10%;
+  height: 74%;
+  border-radius: 18px;
+  border: 1px solid rgba(0,0,0,.10);
+  box-shadow: 0 18px 40px rgba(0,0,0,.14);
+  transform: translateY(42%);
+  transition: transform 1.25s cubic-bezier(.18,.95,.18,1);
+  background:
+    radial-gradient(820px 360px at 30% 10%, rgba(58,74,38,.10), transparent 55%),
+    linear-gradient(180deg, rgba(255,255,255,.82), rgba(254,250,224,.92)),
+    repeating-linear-gradient(0deg, rgba(0,0,0,.014) 0 1px, transparent 1px 8px);
+}
+.letter::after{
+  content:"";
+  position:absolute;
+  inset: 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(58,74,38,.16);
+  pointer-events:none;
+}
+
+.flap{
+  position:absolute;
+  left:0; right:0; top:0;
+  height:58%;
+  background:
+    radial-gradient(820px 280px at 50% 0%, rgba(255,255,255,.58), transparent 58%),
+    linear-gradient(180deg, rgba(255,255,255,.52), rgba(0,0,0,.03));
+  clip-path: polygon(0 0, 100% 0, 50% 62%);
+  transform-origin: 50% 0%;
+  transition: transform 1.25s cubic-bezier(.18,.95,.18,1);
+  border-bottom:1px solid rgba(0,0,0,.08);
+}
+.flap2{
+  position:absolute;
+  left:0; right:0; bottom:0;
+  height:56%;
+  background:
+    radial-gradient(820px 320px at 50% 100%, rgba(255,255,255,.40), transparent 60%),
+    linear-gradient(0deg, rgba(255,255,255,.44), rgba(0,0,0,.05));
+  clip-path: polygon(0 100%, 100% 100%, 50% 40%);
+  border-top:1px solid rgba(0,0,0,.08);
+}
+.seal{
+  position:absolute;
+  left:50%;
+  top:52%;
+  transform:translate(-50%,-50%);
+  width:18px;
+  height:18px;
+  border-radius:999px;
+  background: var(--military);
+  box-shadow:0 12px 20px rgba(0,0,0,.18);
+  border:1px solid rgba(255,255,255,.55);
+  opacity:.9;
+}
+
+body.opened .intro-inner{ animation:none; }
+body.opened .flap{ transform: rotateX(160deg); }
+body.opened .letter{ transform: translateY(0%); }
+body.opened .intro{
+  opacity:0;
+  transform: translateY(-40px);
+  pointer-events:none;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .intro-inner{ animation:none; }
+  .intro, .flap, .letter{ transition:none !important; }
+}
+
+/* =========================
+   RSVP (bouton final)
+   ========================= */
+.rsvp-wrap{
+  display:flex;
+  justify-content:center;
+  padding: 8px 18px 34px;
+}
+.rsvp-btn{
+  min-width: 260px;
+  font-family:"Playfair Display",serif;
+  letter-spacing:.06em;
+}
+</style>
+</head>
+
+<body>
+
+<!-- INTRO / ENVELOPPE -->
+<div class="intro" id="intro">
+  <div class="intro-inner">
+    <h1 class="intro-title">Invitation</h1>
+    <p class="intro-sub">Appuyez pour ouvrir l’enveloppe</p>
+
+    <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Ouvrir l’enveloppe">
+      <div class="letter" aria-hidden="true"></div>
+      <div class="seal" aria-hidden="true"></div>
+      <div class="flap" aria-hidden="true"></div>
+      <div class="flap2" aria-hidden="true"></div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENU -->
+<main class="page" id="content">
+
+  <header>
+    <div class="hero">
+      <div class="kicker">Invitation de mariage</div>
+      <div class="names">
+        <div class="a">Rihab</div>
+        <div class="amp">&amp;</div>
+        <div class="b">Anis</div>
+      </div>
+      <div class="meta">04 avril 2026 · Palais Tazi, Rabat</div>
+      <div class="divider"></div>
+    </div>
+  </header>
+
+  <section>
+    <h2 class="title">Compte à rebours</h2>
+    <p class="sub">Jusqu’à notre grand jour</p>
+
+    <div class="tiles" role="group" aria-label="Compte à rebours">
+      <div class="tile"><div class="num" id="cd-days">—</div><div class="lbl">Jours</div></div>
+      <div class="tile"><div class="num" id="cd-hours">—</div><div class="lbl">Heures</div></div>
+      <div class="tile"><div class="num" id="cd-mins">—</div><div class="lbl">Minutes</div></div>
+      <div class="tile"><div class="num" id="cd-secs">—</div><div class="lbl">Secondes</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="title">Détails</h2>
+    <p class="sub">Toutes les informations essentielles</p>
+
+    <div class="grid">
+      <article class="card" aria-label="Lieu et informations">
+        <div class="pad">
+          <h3>Palais Tazi</h3>
+
+          <div class="details">
+            <div class="row">
+              <div class="ico">📍</div>
+              <div>
+                <div style="font-weight:600;">Lieu</div>
+                <div style="color:rgba(27,26,24,.72)">Palais Tazi, Rabat</div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="ico">📅</div>
+              <div>
+                <div style="font-weight:600;">Date</div>
+                <div style="color:rgba(27,26,24,.72)">04 avril 2026</div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="ico">👰</div>
+              <div>
+                <div style="font-weight:600;">Mariée</div>
+                <div style="color:rgba(27,26,24,.72)">Rihab Amhaouache El Kadaoui</div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="ico">🤵</div>
+              <div>
+                <div style="font-weight:600;">Marié</div>
+                <div style="color:rgba(27,26,24,.72)">Anis Tedjini</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="map" aria-hidden="true">
+          <div class="pin"></div>
+          <div class="map-label">Palais Tazi</div>
+        </div>
+
+        <div class="pad" style="display:flex; justify-content:center; padding-top:14px;">
+          <a class="btn"
+             href="https://www.google.com/maps/search/?api=1&query=Palais%20Tazi%2C%20Rabat"
+             target="_blank" rel="noopener">
+            <span>📍</span><span>Ouvrir dans Maps</span>
+          </a>
+        </div>
+      </article>
+
+      <article class="card" aria-label="Programme">
+        <div class="pad">
+          <h3>Programme</h3>
+
+          <div class="timeline" style="margin-top:10px;">
+            <div class="item">
+              <div class="time">16:00</div>
+              <div class="desc">
+                <p class="t">Cérémonie</p>
+                <p class="s">Arrivée des invités</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="time">18:00</div>
+              <div class="desc">
+                <p class="t">Cocktail de bienvenue</p>
+                <p class="s">Toast & apéritifs</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="time">20:00</div>
+              <div class="desc">
+                <p class="t">Dîner</p>
+                <p class="s">Repas</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="time">22:30</div>
+              <div class="desc">
+                <p class="t">Soirée & danse</p>
+                <p class="s">Musique & fête</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="time">01:30</div>
+              <div class="desc">
+                <p class="t">Fin de soirée</p>
+                <p class="s">Merci d’être avec nous</p>
+              </div>
+            </div>
+          </div>
+
+          <p style="margin: 12px 0 0; text-align:center; color: rgba(27,26,24,.55); font-size: 12px;">
+            (Vous pouvez modifier les horaires dans ce fichier)
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- BOUTON: CONFIRMER LA PRÉSENCE -->
+  <div class="rsvp-wrap">
+    <!-- ⚠️ Remplace +33600000000 par le numéro réel -->
+    <a class="btn rsvp-btn"
+       href="https://wa.me/33600000000?text=Bonjour%2C%20je%20confirme%20ma%20pr%C3%A9sence%20au%20mariage%20de%20Rihab%20et%20Anis%20le%2004%20avril%202026.%20Mon%20nom%20est%20%3A%20"
+       target="_blank" rel="noopener">
+      ✅ Confirmer ma présence
+    </a>
+  </div>
+
+  <footer>Invitation digitale · Rihab &amp; Anis</footer>
+</main>
+
+<script>
+/* Ouvrir enveloppe + scroll + enlever overlay */
+(function(){
+  const envelope = document.getElementById("envelope");
+  const intro = document.getElementById("intro");
+  const content = document.getElementById("content");
+
+  function openInvitation(){
+    if(document.body.classList.contains("opened")) return;
+    document.body.classList.add("opened");
+
+    setTimeout(() => {
+      content.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.scrollTo({ top: content.offsetTop - 10, behavior: "smooth" });
+    }, 260);
+
+    setTimeout(() => { intro.style.display="none"; }, 950);
+  }
+
+  envelope.addEventListener("click", openInvitation);
+  envelope.addEventListener("keydown", (e) => {
+    if(e.key === "Enter" || e.key === " "){
+      e.preventDefault();
+      openInvitation();
+    }
+  });
+})();
+
+/* Compte à rebours */
+(function(){
+  const target=new Date("2026-04-04T16:00:00");
+  const els={
+    d:document.getElementById("cd-days"),
+    h:document.getElementById("cd-hours"),
+    m:document.getElementById("cd-mins"),
+    s:document.getElementById("cd-secs")
+  };
+  function pad(n){return String(n).padStart(2,"0")}
+  function tick(){
+    const now=new Date();
+    let diff=target-now;
+    if(diff<=0){
+      els.d.textContent="0"; els.h.textContent="00"; els.m.textContent="00"; els.s.textContent="00";
+      return;
+    }
+    const sec=Math.floor(diff/1000);
+    els.d.textContent=Math.floor(sec/86400);
+    els.h.textContent=pad(Math.floor((sec%86400)/3600));
+    els.m.textContent=pad(Math.floor((sec%3600)/60));
+    els.s.textContent=pad(sec%60);
+  }
+  tick();
+  setInterval(tick,1000);
+})();
+</script>
+
+</body>
+</html>
