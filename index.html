@@ -11,17 +11,45 @@
 
 <style>
 :root{
-  --beige: rgb(254, 250, 224);
-  --ink:#1b1a18;
-  --muted: rgba(27,26,24,.62);
-  --card: rgba(255,255,255,.80);
-  --shadow: 0 18px 45px rgba(0,0,0,.16);
-  --shadow2: 0 46px 110px rgba(0,0,0,.24);
+  /* ✅ VERT OLIVE (plus doux) */
+  --olive:   rgb(140, 152, 110);
+  --olive-2: rgb(112, 123,  86);
+  --olive-3: rgb( 86,  96,  63);
+
+  /* ✅ Rose (très clair) */
+  --salmon:   rgb(242, 198, 206);
+  --salmon-2: rgb(226, 176, 187);
+  --rose-deep: rgb(150, 90, 105);
+
+  /* fonds */
+  --bg-1: rgb(248, 245, 244);
+  --bg-2: rgb(240, 242, 232);
+
+  /* texte */
+  --ink: rgb(26, 30, 22);
+  --muted: rgba(26, 30, 22, .62);
+
+  /* surfaces */
+  --card: rgba(255, 252, 246, .94);
+  --card-2: rgba(248, 242, 244, .94);
+
+  /* ✅ BOÎTES ROSE (claires) */
+  --pink-box:   rgb(252, 234, 238);
+  --pink-box-2: rgb(246, 216, 223);
+  --pink-stroke: rgba(150, 90, 105, .14);
+
+  /* ombres */
+  --shadow: 0 18px 45px rgba(26,30,22,.14);
+  --shadow2: 0 46px 110px rgba(26,30,22,.18);
   --radius: 26px;
 
-  /* En-tête vert militaire foncé EXACT */
-  --military: rgb(58, 74, 38);
-  --military2: rgb(46, 60, 30);
+  /* alias */
+  --accent: var(--olive-2);
+  --accent-2: var(--olive-3);
+
+  /* rose détails */
+  --pink-detail: var(--salmon);
+  --pink-detail-2: var(--salmon-2);
 }
 
 *{box-sizing:border-box}
@@ -31,9 +59,11 @@ body{
   font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
   color: var(--ink);
   background:
-    radial-gradient(1100px 650px at 20% 10%, rgba(58,74,38,.14), transparent 55%),
-    radial-gradient(900px 520px at 85% 30%, rgba(58,74,38,.10), transparent 60%),
-    linear-gradient(180deg,#f7f2d7,var(--beige));
+    radial-gradient(1100px 650px at 20% 10%, rgba(140,152,110,.22), transparent 55%),
+    radial-gradient(900px 520px at 85% 30%, rgba(112,123, 86,.16), transparent 60%),
+    radial-gradient(980px 640px at 55% 18%, rgba(242,198,206,.16), transparent 58%),
+    radial-gradient(900px 600px at 70% 85%, rgba(226,176,187,.10), transparent 55%),
+    linear-gradient(180deg, var(--bg-1), var(--bg-2));
   padding: 28px 12px 56px;
   overflow-x:hidden;
 }
@@ -43,19 +73,21 @@ body{
   margin:0 auto;
   border-radius: var(--radius);
   overflow:hidden;
-  background: var(--beige);
+  background: linear-gradient(180deg, rgba(255,252,246,.98), rgba(240,242,232,.76));
   box-shadow: var(--shadow2);
-  border: 1px solid rgba(0,0,0,.06);
+  border: 1px solid rgba(112,123,86,.16);
 }
 
 /* =========================
-   EN-TÊTE
+   EN-TÊTE (vert doux)
    ========================= */
 header{
   position:relative;
   background:
-    radial-gradient(900px 460px at 50% -10%, rgba(255,255,255,.08), transparent 60%),
-    linear-gradient(180deg, var(--military), var(--military2));
+    radial-gradient(900px 460px at 20% -10%, rgba(255,255,255,.12), transparent 60%),
+    radial-gradient(760px 460px at 78% 125%, rgba(242,198,206,.16), transparent 60%),
+    radial-gradient(520px 360px at 18% 115%, rgba(226,176,187,.10), transparent 60%),
+    linear-gradient(180deg, var(--accent), var(--accent-2));
   color:#fff;
   overflow:hidden;
 }
@@ -82,7 +114,7 @@ header{
   font-family:"Great Vibes",cursive;
   font-size:clamp(58px,6vw,96px);
   color:#fff;
-  text-shadow:0 14px 34px rgba(0,0,0,.35);
+  text-shadow:0 14px 34px rgba(26,30,22,.35);
 }
 
 .amp{
@@ -90,6 +122,7 @@ header{
   font-style:italic;
   font-size:18px;
   margin:10px 0;
+  opacity:.95;
 }
 
 .meta{
@@ -103,8 +136,8 @@ header{
   height:1px;
   width:min(560px,86%);
   margin:18px auto 0;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.8),transparent);
-  opacity:.7;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.85),transparent);
+  opacity:.85;
 }
 
 /* =========================
@@ -117,18 +150,20 @@ section{ padding: 28px 18px; }
   font-size:46px;
   margin:0;
   text-align:center;
-  color:#2a2a26;
+  color: rgba(26,30,22,.92);
 }
 
 .sub{
   text-align:center;
   font-family:"Playfair Display",serif;
   font-style:italic;
-  color: var(--muted);
+  color: rgba(26,30,22,.62);
   margin:8px 0 18px;
 }
 
-/* Compte à rebours */
+/* =========================
+   COMPTE À REBOURS (rose très clair)
+   ========================= */
 .tiles{
   margin:18px auto 0;
   max-width:760px;
@@ -140,27 +175,28 @@ section{ padding: 28px 18px; }
   .tiles{grid-template-columns:repeat(2,1fr)}
 }
 .tile{
-  background: rgba(255,255,255,.88);
+  background: linear-gradient(180deg, var(--pink-box), var(--pink-box-2));
   border-radius:18px;
   padding:16px;
   text-align:center;
-  box-shadow:0 14px 34px rgba(0,0,0,.10);
-  border: 1px solid rgba(0,0,0,.06);
+  box-shadow:0 14px 34px rgba(26,30,22,.10);
+  border: 1px solid var(--pink-stroke);
 }
 .tile .num{
   font-family:"Playfair Display",serif;
   font-size:34px;
   font-weight:600;
+  color: rgb(70, 30, 42);
 }
 .tile .lbl{
   margin-top:6px;
   font-size:11px;
   letter-spacing:.28em;
   text-transform:uppercase;
-  color:rgba(0,0,0,.6);
+  color: rgba(70, 30, 42, .62);
 }
 
-/* Cartes (Détails + Programme) */
+/* Cartes */
 .grid{
   margin: 18px auto 0;
   max-width: 900px;
@@ -172,9 +208,9 @@ section{ padding: 28px 18px; }
   .grid{ grid-template-columns:1fr; }
 }
 .card{
-  background: var(--card);
+  background: linear-gradient(180deg, var(--card), var(--card-2));
   border-radius: var(--radius);
-  border: 1px solid rgba(0,0,0,.08);
+  border: 1px solid rgba(112,123,86,.16);
   box-shadow: var(--shadow);
   overflow:hidden;
 }
@@ -184,6 +220,7 @@ section{ padding: 28px 18px; }
   text-align:center;
   font-family:"Playfair Display",serif;
   font-weight:600;
+  color: rgba(26,30,22,.92);
 }
 
 .details{
@@ -191,38 +228,43 @@ section{ padding: 28px 18px; }
   display:grid;
   gap:10px;
   font-size:14px;
-  color: rgba(27,26,24,.86);
+  color: rgba(26,30,22,.86);
 }
+
+/* Détails (rose très clair) */
 .row{
   display:flex;
   gap:10px;
   align-items:flex-start;
   padding:10px 12px;
   border-radius:16px;
-  background: rgba(254,250,224,.92);
-  border: 1px solid rgba(0,0,0,.06);
+  background: linear-gradient(180deg, rgba(252,234,238,.96), rgba(246,216,223,.92));
+  border: 1px solid rgba(150,90,105,.14);
 }
 .ico{
   width:30px; height:30px;
   border-radius:12px;
   display:grid;
   place-items:center;
-  background: rgba(58,74,38,.12);
-  border: 1px solid rgba(58,74,38,.18);
+  background:
+    radial-gradient(16px 16px at 30% 30%, rgba(255,255,255,.60), transparent 60%),
+    linear-gradient(180deg, rgba(140,152,110,.38), rgba(242,198,206,.16));
+  border: 1px solid rgba(150,90,105,.14);
   flex:0 0 auto;
 }
 
-/* “Carte” décorative */
+/* Carte décorative */
 .map{
   height:200px;
   background:
-    radial-gradient(800px 250px at 70% 30%, rgba(58,74,38,.18), transparent 55%),
-    linear-gradient(180deg, rgba(58,74,38,.10), rgba(254,250,224,.98)),
-    repeating-linear-gradient(90deg, rgba(0,0,0,.06) 0 1px, transparent 1px 26px),
-    repeating-linear-gradient(0deg, rgba(0,0,0,.04) 0 1px, transparent 1px 22px);
+    radial-gradient(800px 250px at 70% 30%, rgba(140,152,110,.32), transparent 55%),
+    radial-gradient(900px 520px at 25% 70%, rgba(242,198,206,.12), transparent 55%),
+    linear-gradient(180deg, rgba(112,123,86,.12), rgba(248,245,244,.92)),
+    repeating-linear-gradient(90deg, rgba(112,123,86,.14) 0 1px, transparent 1px 26px),
+    repeating-linear-gradient(0deg, rgba(112,123,86,.10) 0 1px, transparent 1px 22px);
   position:relative;
-  border-top: 1px solid rgba(0,0,0,.07);
-  border-bottom: 1px solid rgba(0,0,0,.07);
+  border-top: 1px solid rgba(112,123,86,.18);
+  border-bottom: 1px solid rgba(112,123,86,.18);
 }
 .pin{
   position:absolute;
@@ -231,8 +273,8 @@ section{ padding: 28px 18px; }
   transform:translate(-50%,-60%);
   width:14px; height:14px;
   border-radius:999px;
-  background: var(--military);
-  box-shadow:0 10px 18px rgba(0,0,0,.22);
+  background: var(--pink-detail-2);
+  box-shadow:0 10px 18px rgba(26,30,22,.22);
 }
 .pin::after{
   content:"";
@@ -242,17 +284,18 @@ section{ padding: 28px 18px; }
   width:0; height:0;
   border-left:7px solid transparent;
   border-right:7px solid transparent;
-  border-top:10px solid var(--military);
+  border-top:10px solid var(--pink-detail-2);
 }
 .map-label{
   position:absolute;
   left:18px; bottom:14px;
-  background: rgba(255,255,255,.82);
-  border:1px solid rgba(58,74,38,.18);
+  background: rgba(255,252,246,.90);
+  border:1px solid rgba(242,198,206,.22);
   border-radius:999px;
   padding:8px 12px;
   font-size:12px;
-  box-shadow:0 12px 25px rgba(0,0,0,.10);
+  box-shadow:0 12px 25px rgba(26,30,22,.10);
+  color: rgba(26,30,22,.88);
 }
 
 .btn{
@@ -262,18 +305,24 @@ section{ padding: 28px 18px; }
   justify-content:center;
   padding:12px 16px;
   border-radius:999px;
-  border:1px solid rgba(58,74,38,.30);
-  background: rgba(255,255,255,.86);
-  color: var(--ink);
+  border:1px solid rgba(242,198,206,.26);
+  background:
+    radial-gradient(18px 18px at 30% 30%, rgba(255,255,255,.65), transparent 60%),
+    linear-gradient(180deg, rgba(255,252,246,.92), rgba(248,242,244,.86));
+  color: rgba(26,30,22,.92);
   text-decoration:none;
   font-weight:500;
-  box-shadow:0 10px 25px rgba(0,0,0,.10);
+  box-shadow:0 10px 25px rgba(26,30,22,.10);
   transition: transform .15s ease, background .15s ease;
 }
-.btn:hover{ background: rgba(255,255,255,.96); }
+.btn:hover{
+  background:
+    radial-gradient(18px 18px at 30% 30%, rgba(255,255,255,.75), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.95), rgba(248,242,244,.90));
+}
 .btn:active{ transform: scale(.98); }
 
-/* Timeline */
+/* Programme */
 .timeline{ display:grid; gap:10px; padding: 6px 2px 6px; }
 .item{
   display:grid;
@@ -282,28 +331,31 @@ section{ padding: 28px 18px; }
   align-items:center;
   padding:12px 12px;
   border-radius:18px;
-  background: rgba(254,250,224,.92);
-  border: 1px solid rgba(0,0,0,.06);
+  background: linear-gradient(180deg, rgba(248,242,244,.90), rgba(240,242,232,.76));
+  border: 1px solid rgba(112,123,86,.14);
 }
 .time{
   font-family:"Playfair Display",serif;
   font-weight:600;
   font-size:13px;
-  background: rgba(58,74,38,.12);
-  border: 1px solid rgba(58,74,38,.18);
+  background:
+    linear-gradient(180deg, rgba(140,152,110,.44), rgba(242,198,206,.12));
+  border: 1px solid rgba(242,198,206,.16);
   border-radius:14px;
   padding:10px 10px;
   text-align:center;
+  color: rgba(26,30,22,.92);
 }
 .desc .t{
   margin:0;
   font-family:"Playfair Display",serif;
   font-weight:600;
   font-size:15px;
+  color: rgba(26,30,22,.92);
 }
 .desc .s{
   margin:2px 0 0;
-  color: rgba(27,26,24,.62);
+  color: rgba(26,30,22,.62);
   font-size:12px;
 }
 
@@ -311,12 +363,10 @@ footer{
   padding:20px;
   text-align:center;
   font-size:12px;
-  color:rgba(0,0,0,.5);
+  color:rgba(26,30,22,.55);
 }
 
-/* =========================
-   INTRO / ENVELOPPE
-   ========================= */
+/* INTRO */
 .intro{
   position:fixed;
   inset:0;
@@ -324,13 +374,14 @@ footer{
   place-items:center;
   z-index:9999;
   background:
-    radial-gradient(1100px 650px at 20% 10%, rgba(58,74,38,.16), transparent 55%),
-    radial-gradient(900px 520px at 85% 30%, rgba(58,74,38,.10), transparent 60%),
-    linear-gradient(180deg,#f7f2d7,var(--beige));
+    radial-gradient(1100px 650px at 20% 10%, rgba(140,152,110,.22), transparent 55%),
+    radial-gradient(900px 520px at 85% 30%, rgba(112,123,86,.16), transparent 60%),
+    radial-gradient(980px 640px at 55% 18%, rgba(242,198,206,.16), transparent 58%),
+    radial-gradient(900px 600px at 70% 85%, rgba(226,176,187,.10), transparent 55%),
+    linear-gradient(180deg, var(--bg-1), var(--bg-2));
   transition: opacity .85s ease, transform .85s cubic-bezier(.2,.9,.2,1);
   padding: 22px 12px;
 }
-
 .intro-inner{
   width:min(560px,92vw);
   text-align:center;
@@ -340,18 +391,17 @@ footer{
   0%,100%{ transform: translateY(0); }
   50%{ transform: translateY(-10px); }
 }
-
 .intro-title{
   font-family:"Great Vibes",cursive;
   font-size:56px;
   margin:0 0 6px;
-  color: rgba(27,26,24,.88);
+  color: rgba(26,30,22,.88);
 }
 .intro-sub{
   font-family:"Playfair Display",serif;
   font-style:italic;
   margin:0 0 18px;
-  color: rgba(27,26,24,.62);
+  color: rgba(26,30,22,.62);
   font-size:14px;
 }
 
@@ -365,14 +415,14 @@ footer{
   cursor:pointer;
   user-select:none;
   overflow:hidden;
-  box-shadow: 0 28px 78px rgba(0,0,0,.22);
-  border:1px solid rgba(0,0,0,.10);
+  box-shadow: 0 28px 78px rgba(26,30,22,.20);
+  border:1px solid rgba(112,123,86,.18);
   background:
-    radial-gradient(1200px 700px at 30% 10%, rgba(255,255,255,.60), transparent 52%),
-    radial-gradient(700px 520px at 70% 90%, rgba(0,0,0,.08), transparent 60%),
-    linear-gradient(180deg, rgba(255,255,255,.65), rgba(0,0,0,.05)),
-    repeating-linear-gradient(0deg, rgba(0,0,0,.020) 0 1px, transparent 1px 7px),
-    repeating-linear-gradient(90deg, rgba(0,0,0,.012) 0 1px, transparent 1px 11px);
+    radial-gradient(1200px 700px at 30% 10%, rgba(255,255,255,.52), transparent 52%),
+    radial-gradient(700px 520px at 70% 90%, rgba(26,30,22,.10), transparent 60%),
+    linear-gradient(180deg, rgba(255,252,246,.92), rgba(140,152,110,.18)),
+    repeating-linear-gradient(0deg, rgba(112,123,86,.06) 0 1px, transparent 1px 7px),
+    repeating-linear-gradient(90deg, rgba(112,123,86,.04) 0 1px, transparent 1px 11px);
 }
 .envelope::after{
   content:"";
@@ -381,7 +431,6 @@ footer{
   transform: rotate(-6deg);
   pointer-events:none;
 }
-
 .letter{
   position:absolute;
   left: 8%;
@@ -389,35 +438,35 @@ footer{
   bottom: 10%;
   height: 74%;
   border-radius: 18px;
-  border: 1px solid rgba(0,0,0,.10);
-  box-shadow: 0 18px 40px rgba(0,0,0,.14);
+  border: 1px solid rgba(112,123,86,.16);
+  box-shadow: 0 18px 40px rgba(26,30,22,.12);
   transform: translateY(42%);
   transition: transform 1.25s cubic-bezier(.18,.95,.18,1);
   background:
-    radial-gradient(820px 360px at 30% 10%, rgba(58,74,38,.10), transparent 55%),
-    linear-gradient(180deg, rgba(255,255,255,.82), rgba(254,250,224,.92)),
-    repeating-linear-gradient(0deg, rgba(0,0,0,.014) 0 1px, transparent 1px 8px);
+    radial-gradient(820px 360px at 30% 10%, rgba(140,152,110,.18), transparent 55%),
+    radial-gradient(720px 420px at 78% 85%, rgba(242,198,206,.12), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.86), rgba(240,242,232,.76)),
+    repeating-linear-gradient(0deg, rgba(112,123,86,.05) 0 1px, transparent 1px 8px);
 }
 .letter::after{
   content:"";
   position:absolute;
   inset: 12px;
   border-radius: 14px;
-  border: 1px solid rgba(58,74,38,.16);
+  border: 1px solid rgba(242,198,206,.14);
   pointer-events:none;
 }
-
 .flap{
   position:absolute;
   left:0; right:0; top:0;
   height:58%;
   background:
-    radial-gradient(820px 280px at 50% 0%, rgba(255,255,255,.58), transparent 58%),
-    linear-gradient(180deg, rgba(255,255,255,.52), rgba(0,0,0,.03));
+    radial-gradient(820px 280px at 50% 0%, rgba(255,255,255,.60), transparent 58%),
+    linear-gradient(180deg, rgba(255,252,246,.86), rgba(140,152,110,.16));
   clip-path: polygon(0 0, 100% 0, 50% 62%);
   transform-origin: 50% 0%;
   transition: transform 1.25s cubic-bezier(.18,.95,.18,1);
-  border-bottom:1px solid rgba(0,0,0,.08);
+  border-bottom:1px solid rgba(112,123,86,.14);
 }
 .flap2{
   position:absolute;
@@ -425,9 +474,9 @@ footer{
   height:56%;
   background:
     radial-gradient(820px 320px at 50% 100%, rgba(255,255,255,.40), transparent 60%),
-    linear-gradient(0deg, rgba(255,255,255,.44), rgba(0,0,0,.05));
+    linear-gradient(0deg, rgba(255,252,246,.84), rgba(140,152,110,.14));
   clip-path: polygon(0 100%, 100% 100%, 50% 40%);
-  border-top:1px solid rgba(0,0,0,.08);
+  border-top:1px solid rgba(112,123,86,.14);
 }
 .seal{
   position:absolute;
@@ -437,8 +486,8 @@ footer{
   width:18px;
   height:18px;
   border-radius:999px;
-  background: var(--military);
-  box-shadow:0 12px 20px rgba(0,0,0,.18);
+  background: var(--pink-detail-2);
+  box-shadow:0 12px 20px rgba(26,30,22,.18);
   border:1px solid rgba(255,255,255,.55);
   opacity:.9;
 }
@@ -457,16 +506,14 @@ body.opened .intro{
   .intro, .flap, .letter{ transition:none !important; }
 }
 
-/* =========================
-   RSVP (bouton final)
-   ========================= */
+/* RSVP */
 .rsvp-wrap{
   display:flex;
   justify-content:center;
   padding: 8px 18px 34px;
 }
 .rsvp-btn{
-  min-width: 260px;
+  min-width: 240px;
   font-family:"Playfair Display",serif;
   letter-spacing:.06em;
 }
@@ -475,7 +522,6 @@ body.opened .intro{
 
 <body>
 
-<!-- INTRO / ENVELOPPE -->
 <div class="intro" id="intro">
   <div class="intro-inner">
     <h1 class="intro-title">Invitation</h1>
@@ -490,7 +536,6 @@ body.opened .intro{
   </div>
 </div>
 
-<!-- CONTENU -->
 <main class="page" id="content">
 
   <header>
@@ -508,7 +553,7 @@ body.opened .intro{
 
   <section>
     <h2 class="title">Compte à rebours</h2>
-    <p class="sub">Jusqu’à notre grand jour</p>
+    <p class="sub">Pour le plus beau jour de notre vie</p>
 
     <div class="tiles" role="group" aria-label="Compte à rebours">
       <div class="tile"><div class="num" id="cd-days">—</div><div class="lbl">Jours</div></div>
@@ -520,7 +565,7 @@ body.opened .intro{
 
   <section>
     <h2 class="title">Détails</h2>
-    <p class="sub">Toutes les informations essentielles</p>
+    <p class="sub">Toutes les informations importantes en un clin d’œil</p>
 
     <div class="grid">
       <article class="card" aria-label="Lieu et informations">
@@ -532,7 +577,7 @@ body.opened .intro{
               <div class="ico">📍</div>
               <div>
                 <div style="font-weight:600;">Lieu</div>
-                <div style="color:rgba(27,26,24,.72)">Palais Tazi, Rabat</div>
+                <div style="color:rgba(70,30,42,.78)">Palais Tazi, Rabat</div>
               </div>
             </div>
 
@@ -540,7 +585,7 @@ body.opened .intro{
               <div class="ico">📅</div>
               <div>
                 <div style="font-weight:600;">Date</div>
-                <div style="color:rgba(27,26,24,.72)">04 avril 2026</div>
+                <div style="color:rgba(70,30,42,.78)">04 avril 2026</div>
               </div>
             </div>
 
@@ -548,7 +593,7 @@ body.opened .intro{
               <div class="ico">👰</div>
               <div>
                 <div style="font-weight:600;">Mariée</div>
-                <div style="color:rgba(27,26,24,.72)">Rihab Amhaouache El Kadaoui</div>
+                <div style="color:rgba(70,30,42,.78)">Rihab Amhaouache El Kadaoui</div>
               </div>
             </div>
 
@@ -556,7 +601,7 @@ body.opened .intro{
               <div class="ico">🤵</div>
               <div>
                 <div style="font-weight:600;">Marié</div>
-                <div style="color:rgba(27,26,24,.72)">Anis Tedjini</div>
+                <div style="color:rgba(70,30,42,.78)">Anis Tedjini</div>
               </div>
             </div>
           </div>
@@ -576,9 +621,9 @@ body.opened .intro{
         </div>
       </article>
 
-      <article class="card" aria-label="Programme">
+      <article class="card" aria-label="Programme de la journée">
         <div class="pad">
-          <h3>Programme</h3>
+          <h3>Programme de la journée</h3>
 
           <div class="timeline" style="margin-top:10px;">
             <div class="item">
@@ -592,21 +637,21 @@ body.opened .intro{
               <div class="time">18:00</div>
               <div class="desc">
                 <p class="t">Cocktail de bienvenue</p>
-                <p class="s">Toast & apéritifs</p>
+                <p class="s">Toast et amuse-bouches</p>
               </div>
             </div>
             <div class="item">
               <div class="time">20:00</div>
               <div class="desc">
                 <p class="t">Dîner</p>
-                <p class="s">Repas</p>
+                <p class="s">Banquet</p>
               </div>
             </div>
             <div class="item">
               <div class="time">22:30</div>
               <div class="desc">
-                <p class="t">Soirée & danse</p>
-                <p class="s">Musique & fête</p>
+                <p class="t">Danse</p>
+                <p class="s">Musique et fête</p>
               </div>
             </div>
             <div class="item">
@@ -618,29 +663,26 @@ body.opened .intro{
             </div>
           </div>
 
-          <p style="margin: 12px 0 0; text-align:center; color: rgba(27,26,24,.55); font-size: 12px;">
-            (Profitez de la soirée)
+          <p style="margin: 12px 0 0; text-align:center; color: rgba(26,30,22,.55); font-size: 12px;">
+            (Vous pouvez modifier les horaires en éditant ce fichier)
           </p>
         </div>
       </article>
     </div>
   </section>
 
-  <!-- BOUTON: CONFIRMER LA PRÉSENCE -->
   <div class="rsvp-wrap">
-    <!-- ⚠️ Remplace +33600000000 par le numéro réel -->
     <a class="btn rsvp-btn"
-       href="https://wa.me/33667589369?text=Bonjour%2C%20je%20confirme%20ma%20pr%C3%A9sence%20au%20mariage%20de%20Rihab%20et%20Anis%20le%2004%20avril%202026.%20Mon%20nom%20est%20%3A%20"
+       href="https://wa.me/34600000000?text=Bonjour%2C%20je%20confirme%20ma%20pr%C3%A9sence%20au%20mariage%20de%20Rihab%20et%20Anis%20le%2004%20avril%202026.%20Mon%20nom%20est%20%3A%20"
        target="_blank" rel="noopener">
       ✅ Confirmer ma présence
     </a>
   </div>
 
-  <footer>Invitation digitale · Rihab &amp; Anis</footer>
+  <footer>Invitation numérique · Rihab &amp; Anis</footer>
 </main>
 
 <script>
-/* Ouvrir enveloppe + scroll + enlever overlay */
 (function(){
   const envelope = document.getElementById("envelope");
   const intro = document.getElementById("intro");
@@ -667,7 +709,6 @@ body.opened .intro{
   });
 })();
 
-/* Compte à rebours */
 (function(){
   const target=new Date("2026-04-04T16:00:00");
   const els={
